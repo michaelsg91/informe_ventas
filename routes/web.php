@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/inicio', function () {
+    return view('index');
+});
+
+Route::resource('/clientes','ClientesController');
+Route::resource('/productos','ProductosController');
+Route::resource('/ventas','VentasController');
