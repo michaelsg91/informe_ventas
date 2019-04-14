@@ -17,10 +17,10 @@ class CreateProductosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre_producto');
             $table->unsignedBigInteger('tipo_producto_id');
-            $table->integer("precio_agrocosur");
-            $table->integer("precio_centralpecuaria");
-            $table->integer("precio_disprovet");
-            $table->integer("precio_erma");
+            $table->integer("agrocosur");
+            $table->integer("centralpecuaria");
+            $table->integer("disprovet");
+            $table->integer("erma");
 
             $table->foreign('tipo_producto_id')->references('id')->on('tipo_productos');
             $table->timestamps();

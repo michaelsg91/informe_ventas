@@ -40,10 +40,10 @@ use App\TipoProducto;
       <th scope="row">{{$producto->id}}</th>
       <td>{{$producto->nombre_producto}}</td>
       <td>{{$nombre_tipo_producto->nombre_tipo_producto}}</td>
-      <td class="text-right">{{$producto->precio_agrocosur}}</td>
-      <td class="text-right">{{$producto->precio_centralpecuaria}}</td>
-      <td class="text-right">{{$producto->precio_disprovet}}</td>
-      <td class="text-right">{{$producto->precio_erma}}</td>
+      <td class="text-right">{{$producto->agrocosur}}</td>
+      <td class="text-right">{{$producto->centralpecuaria}}</td>
+      <td class="text-right">{{$producto->disprovet}}</td>
+      <td class="text-right">{{$producto->erma}}</td>
 
       <td class="text-center"><a href="{{route('productos.edit', $producto->id)}}">Editar</a></td>
 

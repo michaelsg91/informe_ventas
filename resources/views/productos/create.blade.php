@@ -35,20 +35,20 @@ $tipo_productos=TipoProducto::all();
           </select>
         </div>
         <div class="form-group">
-          <label for="precio_agrocosur">Precio Agrocosur</label>
-          <input type="number" step="50" class="form-control" id="precio_agrocosur" name="precio_agrocosur" placeholder="Precio Agrocosur">
+          <label for="agrocosur">Precio Agrocosur</label>
+          <input type="number" step="50" class="form-control" id="agrocosur" name="agrocosur" placeholder="Precio Agrocosur">
         </div>
         <div class="form-group">
-          <label for="precio_centralpecuaria">Precio Centralpecuaria</label>
-          <input type="number" step="50" class="form-control" id="precio_centralpecuaria" name="precio_centralpecuaria" placeholder="Precio Centralpecuaria">
+          <label for="centralpecuaria">Precio Centralpecuaria</label>
+          <input type="number" step="50" class="form-control" id="centralpecuaria" name="centralpecuaria" placeholder="Precio Centralpecuaria">
         </div>
         <div class="form-group">
-          <label for="precio_disprovet">Precio Disprovet</label>
-          <input type="number" step="50" class="form-control" id="precio_disprovet" name="precio_disprovet" placeholder="Precio Disprovet">
+          <label for="disprovet">Precio Disprovet</label>
+          <input type="number" step="50" class="form-control" id="disprovet" name="disprovet" placeholder="Precio Disprovet">
         </div>
         <div class="form-group">
-          <label for="precio_erma">Precio ERMA</label>
-          <input type="number" step="50" class="form-control" id="precio_erma" name="precio_erma" placeholder="Precio ERMA">
+          <label for="erma">Precio ERMA</label>
+          <input type="number" step="50" class="form-control" id="erma" name="erma" placeholder="Precio ERMA">
         </div>
 
         {{csrf_field()}}
