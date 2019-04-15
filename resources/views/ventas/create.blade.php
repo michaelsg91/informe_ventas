@@ -55,15 +55,15 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
         </div>
         <div class="form-group">
           <label for="cantidad">Cantidad</label>
-          <input type="number" class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad">
+          <input type="number" min="1" max="999"class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad">
         </div>
         <div class="form-group">
           <label for="valor_unitario">Valor Unitario</label>
-          <input type="text" class="form-control" id="valor_unitario" placeholder="Valor Unitario">
+          <input type="number" step="50" class="form-control" id="valor_unitario" placeholder="Valor Unitario">
         </div>
         <div class="form-group">
           <label for="valor_venta">Valor Total</label>
-          <input type="number" class="form-control" id="valor_venta" name="valor_venta" placeholder="Valor Total">
+          <input type="number" step="50" class="form-control" id="valor_venta" name="valor_venta" placeholder="Valor Total">
         </div>
         <div class="form-group">
           <label for="fecha_venta">Fecha Venta</label>
@@ -89,4 +89,11 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
 @endif
 
 
+@endsection
+
+@section("foot")
+@endsection
+
+@section("javascript")
+<script src="{{asset('js/script_ventas_create.js')}}"></script>
 @endsection

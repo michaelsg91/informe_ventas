@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\Proveedor;
 
 class VentasController extends Controller
 {
@@ -28,8 +29,9 @@ class VentasController extends Controller
       return view("ventas.create");
 
     }
-    public function getValor($producto_id=0){
-      $valor['data']=Producto::where('id',$producto_id)->get();
+
+    public function getValor($producto_id){
+      $valor=Producto::find($producto_id);
       echo json_encode($valor);
       exit;
     }

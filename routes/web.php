@@ -19,7 +19,7 @@ Route::get('/inicio', function () {
     return view('index');
 });
 
-Route::get('/getValor/{id}','AjaxController@getValor');
+Route::get('/ventas/getValor/{id}','VentasController@getValor');
 Route::resource('/clientes','ClientesController');
 Route::resource('/productos','ProductosController');
 Route::resource('/ventas','VentasController');
