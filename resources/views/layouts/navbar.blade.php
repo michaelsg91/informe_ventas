@@ -26,7 +26,7 @@
       Consultar
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="#">Venta</a>
+      <a class="dropdown-item" href="{{route('ventas.index')}}">Venta</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="{{route('productos.index')}}">Producto</a>
       <div class="dropdown-divider"></div>

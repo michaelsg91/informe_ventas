@@ -63,7 +63,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
         </div>
         <div class="form-group">
           <label for="valor_venta">Valor Total</label>
-          <input type="number" step="50" class="form-control" id="valor_venta" name="valor_venta" placeholder="Valor Total">
+          <input type="number" step="50" class="form-control" id="valor_venta" name="valor_venta" placeholder="Valor Total" readonly>
         </div>
         <div class="form-group">
           <label for="fecha_venta">Fecha Venta</label>

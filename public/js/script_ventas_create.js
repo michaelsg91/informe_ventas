@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    // Ajax para obetener valor unitario del producto
+    // Ajax para obtener valor unitario del producto
     $("#proveedor_id").change(obtener_valor);
     $("#producto_id").change(obtener_valor);
 
@@ -24,6 +24,8 @@ $(document).ready(function() {
                 }
 
                 $("#valor_unitario").val(valor);
+                obtener_total();
+
             }
 
 
@@ -33,12 +35,16 @@ $(document).ready(function() {
     // End Ajax
 
     // Script para obtner valor total desde la Cantidad
-    $("#cantidad").keyup(function() {
-        var cantidad = $(this).val();
-        var valor_unitario = $("#valor_unitario").val();
-        var valor_venta = cantidad * valor_unitario;
-        $("#valor_venta").val(valor_venta);
-    });
+    $("#cantidad").keyup(obtener_total);
+    $("#valor_unitario").keyup(obtener_total);
+
+
+    function obtener_total(){
+      var cantidad = $("#cantidad").val();
+      var valor_unitario = $("#valor_unitario").val();
+      var valor_venta = cantidad * valor_unitario;
+      $("#valor_venta").val(valor_venta);
+    }
     // End Script
 
 });

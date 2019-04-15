@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
-use App\Proveedor;
+use App\Venta;
 
 class VentasController extends Controller
 {
@@ -15,7 +15,8 @@ class VentasController extends Controller
      */
     public function index()
     {
-        //
+      $ventas=Venta::orderBy('id','desc')->get();
+      return view("ventas.index",compact("ventas"));
     }
 
     /**
@@ -44,7 +45,10 @@ class VentasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $entrada=$request->all();
+      Venta::create($entrada);
+
+      return redirect("/ventas/create");
     }
 
     /**
@@ -66,7 +70,8 @@ class VentasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $venta=Venta::findOrFail($id);
+        return view("ventas.edit",compact("venta"));
     }
 
     /**
@@ -78,7 +83,10 @@ class VentasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $venta=Venta::findOrFail($id);
+      $venta->update($request->all());
+
+      return redirect("/ventas");
     }
 
     /**
@@ -89,6 +97,9 @@ class VentasController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $venta=Venta::findOrFail($id);
+      $venta->delete();
+
+      return redirect("/ventas");
     }
 }
