@@ -120,5 +120,5 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
 @endsection
 
 @section("javascript")
-<script src="{{asset('js/script_ventas_create.js')}}"></script>
+<script src="{{asset('js/script_ventas.js')}}"></script>
 @endsection
