@@ -85,5 +85,5 @@
 @endsection
 
 @section("javascript")
-<script src="{{asset('js/validation_clientes.js')}}"></script>
+<script src="{{asset('js/validation_bootstrap.js')}}"></script>
 @endsection

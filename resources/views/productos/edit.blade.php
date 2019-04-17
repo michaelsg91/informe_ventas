@@ -99,10 +99,9 @@ $tipo_productos=TipoProducto::all();
   </form>
 
   <form class="formulario" method="post" action="/productos/{{$producto->id}}">
+    
     <div class="row d-flex justify-content-center">
       <div class="col-md-6">
-
-
         <input type="hidden" name="_method" value="DELETE">
         <button type="submit" name="eliminar" class="btn btn-danger mt-4">Eliminar</button>
       </div>
@@ -117,5 +116,5 @@ $tipo_productos=TipoProducto::all();
 @endsection
 
 @section("javascript")
-<script src="{{asset('js/validation_clientes.js')}}"></script>
+<script src="{{asset('js/validation_bootstrap.js')}}"></script>
 @endsection
