@@ -14,7 +14,7 @@
   <tr>
     <th scope="col">Id</th>
     <th scope="col">Nombre Cliente</th>
-    <th scope="col">Cédula</th>
+    <th scope="col">Código</th>
     <th scope="col">Teléfono</th>
     <th scope="col">Dirección</th>
     <th scope="col">Municipio</th>

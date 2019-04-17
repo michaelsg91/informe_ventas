@@ -11,8 +11,8 @@
 
       <form class="formulario" method="post" action="/clientes/{{$cliente->id}}">
         <div class="form-group">
-          <label for="cedula">Cédula Cliente</label>
-          <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Cédula" value="{{$cliente->cedula}}">
+          <label for="cedula">Código Cliente</label>
+          <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Código" value="{{$cliente->cedula}}">
         </div>
         <div class="form-group">
           <label for="nombre_cliente">Nombre</label>
