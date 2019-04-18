@@ -15,8 +15,10 @@ class CreateTipoProductosTable extends Migration
     {
         Schema::create('tipo_productos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre_tipo_producto');
+            $table->string('nombre_tipo_producto',80);
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

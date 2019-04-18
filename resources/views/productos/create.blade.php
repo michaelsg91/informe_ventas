@@ -66,7 +66,7 @@ $tipo_productos=TipoProducto::all();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="agrocosur">Precio Agrocosur</label>
-        <input type="number" step="50" class="form-control" id="agrocosur" name="agrocosur" placeholder="Precio Agrocosur" required>
+        <input type="number" step="50" min="50" class="form-control" id="agrocosur" name="agrocosur" placeholder="Precio Agrocosur" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>
@@ -76,7 +76,7 @@ $tipo_productos=TipoProducto::all();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="centralpecuaria">Precio Centralpecuaria</label>
-        <input type="number" step="50" class="form-control" id="centralpecuaria" name="centralpecuaria" placeholder="Precio Centralpecuaria" required>
+        <input type="number" step="50" min="50" class="form-control" id="centralpecuaria" name="centralpecuaria" placeholder="Precio Centralpecuaria" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>
@@ -86,7 +86,7 @@ $tipo_productos=TipoProducto::all();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="disprovet">Precio Disprovet</label>
-        <input type="number" step="50" class="form-control" id="disprovet" name="disprovet" placeholder="Precio Disprovet" required>
+        <input type="number" step="50" min="50" class="form-control" id="disprovet" name="disprovet" placeholder="Precio Disprovet" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>
@@ -96,7 +96,7 @@ $tipo_productos=TipoProducto::all();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="erma">Precio ERMA</label>
-        <input type="number" step="50" class="form-control" id="erma" name="erma" placeholder="Precio ERMA" required>
+        <input type="number" step="50" min="50" class="form-control" id="erma" name="erma" placeholder="Precio ERMA" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>

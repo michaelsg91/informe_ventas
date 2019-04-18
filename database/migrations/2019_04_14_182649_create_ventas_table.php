@@ -22,10 +22,14 @@ class CreateVentasTable extends Migration
             $table->integer('cantidad');
             $table->integer('valor_venta');
 
-            $table->foreign('producto_id')->references('id')->on('productos');
-            $table->foreign('proveedor_id')->references('id')->on('proveedors');
-            $table->foreign('cliente_id')->references('id')->on('clientes');
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
+            $table->foreign('proveedor_id')->references('id')->on('proveedors')->onDelete('cascade');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
+
+
         });
     }
 

@@ -36,8 +36,8 @@
 
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
-        <label for="cedula">Código Cliente</label>
-        <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Código Cliente" required>
+        <label for="codigo">Código Cliente</label>
+        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Código Cliente" required>
         <div class="invalid-tooltip">
           Ingrese un código por favor.
         </div>
