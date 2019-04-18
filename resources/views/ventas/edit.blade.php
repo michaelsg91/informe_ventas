@@ -1,7 +1,5 @@
 @extends("../layouts.plantilla")
 
-@section("cabecera")
-@endsection
 @section("contenido")
 
 <?php
@@ -20,7 +18,32 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
 
   <h4 class="text-center my-5">Editar Venta</h4>
 
+<!-- Start form Edit Ventas -->
   <form class="needs-validation" id="form_create_venta" method="post" action="/ventas/{{$venta->id}}" novalidate>
+
+    <!-- Start if Errors -->
+    @if(count($errors)>0)
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6 alert alert-danger">
+        <ul>
+          @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
+    @endif
+    <!-- End if Errors -->
+
+    <!-- Start if success -->
+    @if(Session::has('success'))
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6 alert alert-success">
+        {{Session::get('success')}}
+      </div>
+    </div>
+    @endif
+    <!-- End if success -->
 
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
@@ -82,7 +105,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="cantidad">Cantidad</label>
-        <input type="number" min="1" max="999" class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad" value="{{$venta->cantidad}}" required>
+        <input type="number" step="1" min="1" max="999" class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad" value="{{$venta->cantidad}}" required>
         <div class="invalid-tooltip">
           Ingresa la cantidad por favor.
         </div>
@@ -109,7 +132,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="fecha_venta">Fecha Venta</label>
-        <input type="date" value="{{date('Y-m-d')}}" class="form-control" id="fecha_venta" name="fecha_venta" placeholder="Fecha Venta" value="{{$venta->fecha_venta}}" required>
+        <input type="date" max="{{date('Y-m-d')}}" class="form-control" id="fecha_venta" name="fecha_venta" placeholder="Fecha Venta" value="{{$venta->fecha_venta}}" required>
         <div class="invalid-tooltip">
           Escoge la fecha por favor.
         </div>
@@ -128,6 +151,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
 
     {{csrf_field()}}
   </form>
+  <!-- End form Edit Ventas -->
 
   <form class="formulario" method="post" action="/ventas/{{$venta->id}}">
 

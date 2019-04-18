@@ -1,14 +1,38 @@
 @extends("../layouts.plantilla")
 
-@section("cabecera")
-@endsection
 @section("contenido")
 
 <div class="container">
 
   <h4 class="text-center my-5">Registrar Cliente</h4>
 
+<!-- Start form Create Clientes -->
   <form class="needs-validation" method="post" action="/clientes" novalidate>
+
+    <!-- Start if Errors -->
+    @if(count($errors)>0)
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6 alert alert-danger">
+        <ul>
+          @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
+    @endif
+    <!-- End if Errors -->
+
+    <!-- Start if success -->
+    @if(Session::has('success'))
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6 alert alert-success">
+        {{Session::get('success')}}
+      </div>
+    </div>
+    @endif
+    <!-- End if success -->
+
 
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
@@ -58,6 +82,7 @@
     </div>
     {{csrf_field()}}
   </form>
+  <!-- End form Create Clientes -->
 
 </div>
 

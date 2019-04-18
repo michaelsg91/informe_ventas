@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
+use App\Http\Requests\ClientesRequest;
 
 class ClientesController extends Controller
 {
@@ -35,12 +36,13 @@ class ClientesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClientesRequest $request)
     {
+
       $entrada=$request->all();
       Cliente::create($entrada);
 
-      return redirect("/clientes");
+      return redirect()->back()->with('success','Cliente registrado correctamente.');
     }
 
     /**
@@ -73,12 +75,12 @@ class ClientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ClientesRequest $request, $id)
     {
       $cliente=Cliente::findOrFail($id);
       $cliente->update($request->all());
 
-      return redirect("/clientes");
+      return redirect()->back()->with('success','Cliente actualizado correctamente.');
     }
 
     /**

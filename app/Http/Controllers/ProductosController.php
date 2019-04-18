@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\Http\Requests\ProductosRequest;
 
 class ProductosController extends Controller
 {
@@ -35,12 +36,12 @@ class ProductosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductosRequest $request)
     {
       $entrada=$request->all();
       Producto::create($entrada);
 
-      return redirect("/productos");
+      return redirect()->back()->with('success','Producto registrado correctamente.');
     }
 
     /**
@@ -73,12 +74,12 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductosRequest $request, $id)
     {
       $producto=Producto::findOrFail($id);
       $producto->update($request->all());
 
-      return redirect("/productos");
+      return redirect()->back()->with('success','Producto actualizado correctamente.');
     }
 
     /**

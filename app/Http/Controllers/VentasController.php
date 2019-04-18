@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Venta;
+use App\Http\Requests\VentasRequest;
 
 class VentasController extends Controller
 {
@@ -43,12 +44,12 @@ class VentasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VentasRequest $request)
     {
       $entrada=$request->all();
       Venta::create($entrada);
 
-      return redirect("/ventas/create");
+      return redirect()->back()->with('success','Venta registrada correctamente.');
     }
 
     /**
@@ -81,12 +82,12 @@ class VentasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(VentasRequest $request, $id)
     {
       $venta=Venta::findOrFail($id);
       $venta->update($request->all());
 
-      return redirect("/ventas");
+      return redirect()->back()->with('success','Venta actualizada correctamente.');
     }
 
     /**

@@ -1,8 +1,5 @@
 @extends("../layouts.plantilla")
 
-@section("header")
-@endsection
-
 @section("contenido")
 
 <?php
@@ -24,8 +21,8 @@ use App\TipoProducto;
     <th scope="col">Precio Centralpecuaria</th>
     <th scope="col">Precio Disprovet</th>
     <th scope="col">Precio ERMA</th>
-    <th scope="col">Modificar</th>
-
+    <th scope="col">Editar</th>
+    <th scope="col">Eliminar</th>
 
   </tr>
 </thead>
@@ -44,8 +41,9 @@ use App\TipoProducto;
       <td class="text-right">{{$producto->centralpecuaria}}</td>
       <td class="text-right">{{$producto->disprovet}}</td>
       <td class="text-right">{{$producto->erma}}</td>
+      <td class="text-center"><a href="{{route('productos.edit', $producto->id)}}"><img src="{{asset('images/editar.png')}}" alt="delete"></a></td>
+      <td class="text-center"><a href="#"><img src="{{asset('images/eliminar.png')}}" alt="delete"></a></td>
 
-      <td class="text-center"><a href="{{route('productos.edit', $producto->id)}}">Editar</a></td>
 
     </tr>
   @endforeach

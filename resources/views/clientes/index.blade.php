@@ -1,8 +1,5 @@
 @extends("../layouts.plantilla")
 
-@section("header")
-@endsection
-
 @section("contenido")
 
 <div class="container my-5">
@@ -18,7 +15,8 @@
     <th scope="col">Teléfono</th>
     <th scope="col">Dirección</th>
     <th scope="col">Municipio</th>
-    <th scope="col">Modificar</th>
+    <th scope="col">Editar</th>
+    <th scope="col">Eliminar</th>
 
 
   </tr>
@@ -32,7 +30,8 @@
     <td>{{$cliente->telefono}}</td>
     <td>{{$cliente->direccion}}</td>
     <td>{{$cliente->municipio}}</td>
-    <td><a href="{{route('clientes.edit', $cliente->id)}}">Editar</a></td>
+    <td class="text-center"><a href="{{route('clientes.edit', $cliente->id)}}"><img src="{{asset('images/editar.png')}}" alt="delete"></a></td>
+    <td class="text-center"><a href="#"><img src="{{asset('images/eliminar.png')}}" alt="delete"></a></td>
 
   </tr>
   @endforeach

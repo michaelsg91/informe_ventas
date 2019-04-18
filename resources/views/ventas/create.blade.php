@@ -1,7 +1,5 @@
 @extends("../layouts.plantilla")
 
-@section("cabecera")
-@endsection
 @section("contenido")
 
 <?php
@@ -19,8 +17,34 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
 <div class="container">
   <h4 class="text-center my-5">Registrar Venta</h4>
 
+<!-- Start form Create Ventas -->
   <form class="needs-validation" id="form_create_venta" method="post" action="/ventas" novalidate>
 
+    <!-- Start if Errors -->
+    @if(count($errors)>0)
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6 alert alert-danger">
+        <ul>
+          @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
+    @endif
+    <!-- End if Errors -->
+
+    <!-- Start if success -->
+    @if(Session::has('success'))
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6 alert alert-success">
+        {{Session::get('success')}}
+      </div>
+    </div>
+    @endif
+    <!-- End if success -->
+
+    <!-- Div Clinte ID -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="cliente_id">Cliente</label>
@@ -37,6 +61,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Producto ID -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="producto_id">Producto</label>
@@ -50,6 +75,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Proveedor ID -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="proveedor_id">Proveedor</label>
@@ -66,16 +92,18 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Cantidad -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="cantidad">Cantidad</label>
-        <input type="number" min="1" max="999" class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad" required>
+        <input type="number" step="1" min="1" max="999" class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad" required>
         <div class="invalid-tooltip">
-          Ingresa la cantidad por favor.
+          La cantidad es erronea.
         </div>
       </div>
     </div>
 
+    <!-- Div Valor Unitario -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="valor_unitario">Valor Unitario</label>
@@ -86,6 +114,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Valor Total -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="valor_venta">Valor Total</label>
@@ -93,16 +122,18 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Fecha Venta -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="fecha_venta">Fecha Venta</label>
-        <input type="date" value="{{date('Y-m-d')}}" class="form-control" id="fecha_venta" name="fecha_venta" placeholder="Fecha Venta" required>
+        <input type="date" value="{{date('Y-m-d')}}" max="{{date('Y-m-d')}}" class="form-control" id="fecha_venta" name="fecha_venta" placeholder="Fecha Venta" required>
         <div class="invalid-tooltip">
           Escoge la fecha por favor.
         </div>
       </div>
     </div>
 
+    <!-- Div Button Submit -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6">
         <button type="submit" class="float-right btn color-p mt-2">Enviar</button>
@@ -111,6 +142,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
 
     {{csrf_field()}}
   </form>
+  <!-- End form Create Ventas -->
 
 </div>
 

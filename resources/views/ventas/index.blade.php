@@ -27,7 +27,8 @@ use App\Proveedor;
     <th scope="col">Fecha Venta</th>
     <th scope="col">Cantidad</th>
     <th scope="col">Valor Venta</th>
-    <th scope="col">Modificar</th>
+    <th scope="col">Editar</th>
+    <th scope="col">Eliminar</th>
 
 
   </tr>
@@ -49,8 +50,8 @@ use App\Proveedor;
       <td>{{$venta->fecha_venta}}</td>
       <td class="text-right">{{$venta->cantidad}}</td>
       <td class="text-right">{{$venta->valor_venta}}</td>
-
-      <td class="text-center"><a href="{{route('ventas.edit', $venta->id)}}">Editar</a></td>
+      <td class="text-center"><a href="{{route('ventas.edit', $venta->id)}}"><img src="{{asset('images/editar.png')}}" alt="delete"></a></td>
+      <td class="text-center"><a href="#"><img src="{{asset('images/eliminar.png')}}" alt="delete"></a></td>
 
     </tr>
   @endforeach
