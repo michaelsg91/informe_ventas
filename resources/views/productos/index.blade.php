@@ -29,7 +29,7 @@ use App\TipoProducto;
 <tbody>
   @foreach($productos as $producto)
     <?php
-      $nombre_tipo_producto=TipoProducto::findOrFail($producto->tipo_producto_id);
+      $nombre_tipo_producto=TipoProducto::withTrashed()->findOrFail($producto->tipo_producto_id);
 
        ?>
 

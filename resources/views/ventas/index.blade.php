@@ -36,9 +36,9 @@ use App\Proveedor;
 <tbody>
   @foreach($ventas as $venta)
     <?php
-      $nombre_producto=Producto::findOrFail($venta->producto_id);
-      $nombre_cliente=Cliente::findOrFail($venta->cliente_id);
-      $nombre_proveedor=Proveedor::findOrFail($venta->proveedor_id);
+      $nombre_producto=Producto::withTrashed()->findOrFail($venta->producto_id);
+      $nombre_cliente=Cliente::withTrashed()->findOrFail($venta->cliente_id);
+      $nombre_proveedor=Proveedor::withTrashed()->findOrFail($venta->proveedor_id);
 
        ?>
 

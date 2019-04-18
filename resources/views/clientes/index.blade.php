@@ -23,6 +23,7 @@
 </thead>
 <tbody>
   @foreach($clientes as $cliente)
+
   <tr>
     <th scope="row">{{$cliente->id}}</th>
     <td>{{$cliente->nombre_cliente}}</td>
@@ -32,12 +33,14 @@
     <td>{{$cliente->municipio}}</td>
     <td class="text-center"><a href="{{route('clientes.edit', $cliente->id)}}"><img src="{{asset('images/editar.png')}}" alt="edit"></a></td>
 
-    <form class="formulario" method="post" action="/clientes/{{$cliente->id}}">
+    <td class="text-center">
+    <!-- Start form Delete Cliente -->
+    <form method="post" action="/clientes/{{$cliente->id}}">
       {{csrf_field()}}
-        <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal_eliminar"><img src="{{asset('images/eliminar.png')}}" alt="delete"></a>
+      <a href="#" data-toggle="modal" data-target="#modal_eliminar{{$cliente->id}}"><img src="{{asset('images/eliminar.png')}}" alt="delete"></a>
 
-        <!-- Modal -->
-        <div class="modal fade" id="modal_eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Start Modal -->
+        <div class="modal fade" id="modal_eliminar{{$cliente->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -47,7 +50,8 @@
                 </button>
               </div>
               <div class="modal-body">
-                ¿Estás seguro que deseas eliminar el registro?
+                ¿Estás seguro que deseas eliminar el siguiente cliente? <br>
+                {{$cliente->nombre_cliente}}
               </div>
               <div class="modal-footer">
                 <input type="hidden" name="_method" value="DELETE">
@@ -57,12 +61,11 @@
             </div>
           </div>
         </div>
-
-
-
-      </td>
+        <!-- End Modal -->
 
     </form>
+    <!-- End form Delete Cliente -->
+  </td>
 
   </tr>
   @endforeach
