@@ -40,6 +40,7 @@ $tipo_productos=TipoProducto::all();
     @endif
     <!-- End if success -->
 
+    <!-- Div Nombre Producto -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="nombre_producto">Nombre Producto</label>
@@ -48,9 +49,9 @@ $tipo_productos=TipoProducto::all();
           Ingrese el nombre del producto por favor.
         </div>
       </div>
-
     </div>
 
+    <!-- Div Tipo Producto -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="tipo_producto">Tipo Producto</label>
@@ -68,6 +69,7 @@ $tipo_productos=TipoProducto::all();
       </div>
     </div>
 
+    <!-- Div Precio Agrocosur -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="precio_agrocosur">Precio Agrocosur</label>
@@ -78,6 +80,7 @@ $tipo_productos=TipoProducto::all();
       </div>
     </div>
 
+    <!-- Div Precio Centralpecuaria -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="precio_centralpecuaria">Precio Centralpecuaria</label>
@@ -88,6 +91,7 @@ $tipo_productos=TipoProducto::all();
       </div>
     </div>
 
+    <!-- Div Precio Disprovet -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="precio_disprovet">Precio Disprovet</label>
@@ -98,6 +102,7 @@ $tipo_productos=TipoProducto::all();
       </div>
     </div>
 
+    <!-- Div Precio ERMA -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="precio_erma">Precio ERMA</label>
@@ -108,6 +113,7 @@ $tipo_productos=TipoProducto::all();
       </div>
     </div>
 
+    <!-- Div Button Actualizar -->
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="d-flex justify-content-between">
@@ -122,19 +128,6 @@ $tipo_productos=TipoProducto::all();
 
   </form>
   <!-- End form Edit Productos -->
-
-  <form class="formulario" method="post" action="/productos/{{$producto->id}}">
-
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-6">
-        <input type="hidden" name="_method" value="DELETE">
-        <button type="submit" name="eliminar" class="btn btn-danger mt-4">Eliminar</button>
-      </div>
-    </div>
-
-    {{csrf_field()}}
-
-  </form>
 
 </div>
 

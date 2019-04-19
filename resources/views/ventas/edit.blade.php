@@ -45,6 +45,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
     @endif
     <!-- End if success -->
 
+    <!-- Div Cliente -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="cliente_id">Cliente</label>
@@ -65,6 +66,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Producto -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="producto_id">Producto</label>
@@ -82,6 +84,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Proveedor -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="proveedor_id">Proveedor</label>
@@ -102,6 +105,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Cantidad -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="cantidad">Cantidad</label>
@@ -112,6 +116,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Valor Unitario -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="valor_unitario">Valor Unitario</label>
@@ -122,6 +127,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Valor Total -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="valor_venta">Valor Total</label>
@@ -129,6 +135,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Fecha Venta -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="fecha_venta">Fecha Venta</label>
@@ -139,6 +146,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
       </div>
     </div>
 
+    <!-- Div Button Actualizar -->
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="d-flex justify-content-between">
@@ -152,19 +160,6 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
     {{csrf_field()}}
   </form>
   <!-- End form Edit Ventas -->
-
-  <form class="formulario" method="post" action="/ventas/{{$venta->id}}">
-
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-6">
-        <input type="hidden" name="_method" value="DELETE">
-        <button type="submit" name="eliminar" class="btn btn-danger mt-4">Eliminar</button>
-      </div>
-    </div>
-
-    {{csrf_field()}}
-
-  </form>
 
 </div>
 

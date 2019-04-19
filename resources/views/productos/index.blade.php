@@ -29,7 +29,7 @@ use App\TipoProducto;
 <tbody>
   @foreach($productos as $producto)
     <?php
-      $nombre_tipo_producto=TipoProducto::withTrashed()->findOrFail($producto->tipo_producto_id);
+      $nombre_tipo_producto=TipoProducto::findOrFail($producto->tipo_producto_id);
 
        ?>
 
@@ -42,8 +42,40 @@ use App\TipoProducto;
       <td class="text-right">{{$producto->disprovet}}</td>
       <td class="text-right">{{$producto->erma}}</td>
       <td class="text-center"><a href="{{route('productos.edit', $producto->id)}}"><img src="{{asset('images/editar.png')}}" alt="delete"></a></td>
-      <td class="text-center"><a href="#"><img src="{{asset('images/eliminar.png')}}" alt="delete"></a></td>
 
+      <td class="text-center">
+      <!-- Start form Delete Cliente -->
+      <form method="post" action="/productos/{{$producto->id}}">
+        {{csrf_field()}}
+        <a href="#" data-toggle="modal" data-target="#modal_eliminar{{$producto->id}}"><img src="{{asset('images/eliminar.png')}}" alt="delete"></a>
+
+          <!-- Start Modal -->
+          <div class="modal fade" id="modal_eliminar{{$producto->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Eliminar Registro</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ¿Estás seguro que deseas eliminar el siguiente producto? <br>
+                  {{$producto->nombre_producto}}
+                </div>
+                <div class="modal-footer">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" name="eliminar" class="btn btn-danger">Eliminar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Modal -->
+
+      </form>
+      <!-- End form Delete Cliente -->
+    </td>
 
     </tr>
   @endforeach

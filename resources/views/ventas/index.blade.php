@@ -1,14 +1,13 @@
 @extends("../layouts.plantilla")
 
-@section("header")
-@endsection
-
 @section("contenido")
 
 <?php
 use App\Producto;
 use App\Cliente;
 use App\Proveedor;
+$valor_total=0;
+$cantidad_total=0;
 
 
  ?>
@@ -34,6 +33,7 @@ use App\Proveedor;
   </tr>
 </thead>
 <tbody>
+
   @foreach($ventas as $venta)
     <?php
       $nombre_producto=Producto::withTrashed()->findOrFail($venta->producto_id);
@@ -51,10 +51,60 @@ use App\Proveedor;
       <td class="text-right">{{$venta->cantidad}}</td>
       <td class="text-right">{{$venta->valor_venta}}</td>
       <td class="text-center"><a href="{{route('ventas.edit', $venta->id)}}"><img src="{{asset('images/editar.png')}}" alt="delete"></a></td>
-      <td class="text-center"><a href="#"><img src="{{asset('images/eliminar.png')}}" alt="delete"></a></td>
+
+      <td class="text-center">
+      <!-- Start form Delete Cliente -->
+      <form method="post" action="/ventas/{{$venta->id}}">
+        {{csrf_field()}}
+        <a href="#" data-toggle="modal" data-target="#modal_eliminar{{$venta->id}}"><img src="{{asset('images/eliminar.png')}}" alt="delete"></a>
+
+          <!-- Start Modal -->
+          <div class="modal fade" id="modal_eliminar{{$venta->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Eliminar Registro</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ¿Estás seguro que deseas eliminar la venta del siguiente producto? <br>
+                  {{$nombre_producto->nombre_producto}}
+                </div>
+                <div class="modal-footer">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" name="eliminar" class="btn btn-danger">Eliminar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Modal -->
+
+      </form>
+      <!-- End form Delete Cliente -->
+    </td>
 
     </tr>
+
+    <?php
+    $valor_total=$valor_total+$venta->valor_venta;
+    $cantidad_total=$cantidad_total+$venta->cantidad;
+    ?>
+
   @endforeach
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="font-weight-bold">Total</td>
+    <td class="text-right font-weight-bold">{{$cantidad_total}}</td>
+    <td class="text-right font-weight-bold">{{$valor_total}}</td>
+    <td></td>
+    <td></td>
+  </tr>
 </tbody>
 </table>
 
@@ -62,9 +112,5 @@ use App\Proveedor;
 
 
 
-
-@endsection
-
-@section("foot")
 
 @endsection

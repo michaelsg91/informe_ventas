@@ -32,6 +32,7 @@ class VentasController extends Controller
 
     }
 
+    // Funcion para obtener valor unitario
     public function getValor($producto_id){
       $valor=Producto::find($producto_id);
       echo json_encode($valor);

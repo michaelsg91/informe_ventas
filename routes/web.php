@@ -20,6 +20,7 @@ Route::get('/inicio', function () {
 });
 
 Route::get('/ventas/getValor/{id}','VentasController@getValor');
+Route::resource('/consultas','ConsultaVentasController');
 Route::resource('/clientes','ClientesController');
 Route::resource('/productos','ProductosController');
 Route::resource('/ventas','VentasController');

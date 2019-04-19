@@ -23,15 +23,18 @@
   </li>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Consultar
+      Listar
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="{{route('ventas.index')}}">Venta</a>
+      <a class="dropdown-item" href="{{route('ventas.index')}}">Ventas</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="{{route('productos.index')}}">Producto</a>
+      <a class="dropdown-item" href="{{route('productos.index')}}">Productos</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="{{route('clientes.index')}}">Cliente</a>
+      <a class="dropdown-item" href="{{route('clientes.index')}}">Clientes</a>
     </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{route('consultas.index')}}">Consultas</a>
   </li>
 
 </ul>

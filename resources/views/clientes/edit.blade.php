@@ -31,6 +31,7 @@
     @endif
     <!-- End if success -->
 
+    <!-- div Codigo Cliente -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="codigo">Código Cliente</label>
@@ -41,6 +42,7 @@
       </div>
     </div>
 
+    <!-- Div Nombre Cliente -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="nombre_cliente">Nombre</label>
@@ -51,6 +53,7 @@
       </div>
     </div>
 
+    <!-- div Telefono -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="telefono">Teléfono</label>
@@ -58,6 +61,7 @@
       </div>
     </div>
 
+    <!-- Div Direccion -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="direccion">Dirección</label>
@@ -65,6 +69,7 @@
       </div>
     </div>
 
+    <!-- Div Municipio -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="municipio">Municipio</label>
@@ -72,6 +77,7 @@
       </div>
     </div>
 
+    <!-- Div Button Actualizar -->
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="d-flex justify-content-between">
@@ -88,21 +94,6 @@
 
   </form>
 <!-- End form edit Clientes -->
-
-
-  <form class="formulario" method="post" action="/clientes/{{$cliente->id}}">
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-6">
-
-        <input type="hidden" name="_method" value="DELETE">
-        <button type="submit" name="eliminar" class="btn btn-danger mt-4">Eliminar</button>
-
-      </div>
-    </div>
-    {{csrf_field()}}
-  </form>
-
-
 
 </div>
 
