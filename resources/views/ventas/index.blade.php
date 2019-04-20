@@ -3,12 +3,9 @@
 @section("contenido")
 
 <?php
-use App\Producto;
-use App\Cliente;
-use App\Proveedor;
+
 $valor_total=0;
 $cantidad_total=0;
-
 
  ?>
 
@@ -49,12 +46,6 @@ $cantidad_total=0;
         <tbody>
 
           @foreach($ventas as $venta)
-          <?php
-      $nombre_producto=Producto::withTrashed()->findOrFail($venta->producto_id);
-      $nombre_cliente=Cliente::withTrashed()->findOrFail($venta->cliente_id);
-      $nombre_proveedor=Proveedor::withTrashed()->findOrFail($venta->proveedor_id);
-
-       ?>
 
           <tr>
             <th scope="row">{{$venta->id}}</th>
@@ -84,7 +75,7 @@ $cantidad_total=0;
                       </div>
                       <div class="modal-body">
                         ¿Estás seguro que deseas eliminar la venta del siguiente producto? <br>
-                        {{$nombre_producto->nombre_producto}}
+                        {{$venta->nombre_producto}}
                       </div>
                       <div class="modal-footer">
                         <input type="hidden" name="_method" value="DELETE">
@@ -121,6 +112,8 @@ $cantidad_total=0;
           </tr>
         </tbody>
       </table>
+      {!! $ventas->links() !!} <!-- paginacion -->
+
     </main>
     <!-- End main table -->
 

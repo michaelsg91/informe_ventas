@@ -83,6 +83,7 @@
           @endforeach
         </tbody>
       </table>
+      {!! $clientes->links() !!} <!-- paginacion -->
     </main>
     <!-- End main table -->
 

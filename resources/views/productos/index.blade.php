@@ -86,6 +86,7 @@
           @endforeach
         </tbody>
       </table>
+      {!! $productos->links() !!} <!-- paginacion -->      
     </main>
     <!-- End main table -->
 

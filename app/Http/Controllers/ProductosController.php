@@ -18,8 +18,8 @@ class ProductosController extends Controller
       $productos=Producto::join('tipo_productos','tipo_productos.id','=','productos.tipo_producto_id')
                           ->select('productos.*','tipo_productos.nombre_tipo_producto')
                           ->orderBy('nombre_producto','asc')
-                          ->get();
-      // orderBy('nombre_producto','asc')->get();
+                          ->paginate(10);
+
       return view("productos.index",compact("productos"));
     }
 
@@ -61,7 +61,8 @@ class ProductosController extends Controller
                            ->where('nombre_producto','like','%'.$busqueda.'%')
                            ->orWhere('nombre_tipo_producto','like','%'.$busqueda.'%')
                            ->orderBy('nombre_producto','asc')
-                           ->get();
+                           ->paginate(10);
+
       return view("productos.index",compact("productos"));
     }
 

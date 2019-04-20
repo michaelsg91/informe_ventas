@@ -21,7 +21,7 @@ class VentasController extends Controller
                      ->join('proveedors','proveedors.id','=','ventas.proveedor_id')
                      ->select('ventas.*','productos.nombre_producto','clientes.nombre_cliente','proveedors.nombre_proveedor')
                      ->orderBy('id','desc')
-                     ->get();
+                     ->paginate(10);
       return view("ventas.index",compact("ventas"));
     }
 
@@ -74,7 +74,7 @@ class VentasController extends Controller
                        ->orWhere('nombre_proveedor','like','%'.$busqueda.'%')
                        ->orWhere('nombre_cliente','like','%'.$busqueda.'%')
                        ->orderBy('id','desc')
-                       ->get();
+                       ->paginate(10);
 
         return view("ventas.index",compact("ventas"));
 

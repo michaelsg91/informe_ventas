@@ -35,7 +35,7 @@
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="codigo">Código Cliente</label>
-        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Código" value="{{$cliente->codigo}}" required>
+        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Código" value="{{$cliente->codigo}}" required  autofocus>
         <div class="invalid-tooltip">
           Ingrese un código por favor.
         </div>

@@ -44,7 +44,7 @@ $tipo_productos=TipoProducto::all();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="nombre_producto">Nombre Producto</label>
-        <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" value="{{$producto->nombre_producto}}" placeholder="Nombre Producto" required>
+        <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" value="{{$producto->nombre_producto}}" placeholder="Nombre Producto" required autofocus>
         <div class="invalid-tooltip">
           Ingrese el nombre del producto por favor.
         </div>
