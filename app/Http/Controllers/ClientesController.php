@@ -53,7 +53,10 @@ class ClientesController extends Controller
      */
     public function show($busqueda)
     {
-      $clientes=Cliente::where('nombre_cliente','like','%'.$busqueda.'%')->orderBy('nombre_cliente','asc')->get();
+      $clientes=Cliente::where('nombre_cliente','like','%'.$busqueda.'%')
+                        ->orWhere('municipio','like','%'.$busqueda.'%')
+                        ->orderBy('nombre_cliente','asc')
+                        ->get();
       return view("clientes.index",compact("clientes"));
     }
 

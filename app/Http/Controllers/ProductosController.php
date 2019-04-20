@@ -15,7 +15,10 @@ class ProductosController extends Controller
      */
     public function index()
     {
-      $productos=Producto::all();
+      $productos=Producto::join('tipo_productos','productos.tipo_producto_id','=','tipo_productos.id')
+                          ->select('productos.*','tipo_productos.nombre_tipo_producto')
+                          ->get();
+      // orderBy('nombre_producto','asc')->get();
       return view("productos.index",compact("productos"));
     }
 
@@ -50,9 +53,15 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($busqueda)
     {
-        //
+      $productos=Producto::join('tipo_productos','productos.tipo_producto_id','=','tipo_productos.id')
+                           ->select('productos.*','tipo_productos.nombre_tipo_producto')
+                           ->where('nombre_producto','like','%'.$busqueda.'%')
+                           ->orWhere('nombre_tipo_producto','like','%'.$busqueda.'%')
+                           ->orderBy('nombre_producto','asc')
+                           ->get();
+      return view("productos.index",compact("productos"));
     }
 
     /**

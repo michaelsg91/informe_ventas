@@ -155,11 +155,11 @@ $cantidad_total=0;
           </tr>
         </tbody>
       </table>
+      <!-- End tabla de resultados -->
 
     </main>
   </div>
 </div>
-<!-- End tabla de resultados -->
 
 @endsection
 
