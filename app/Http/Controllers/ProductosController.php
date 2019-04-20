@@ -15,8 +15,9 @@ class ProductosController extends Controller
      */
     public function index()
     {
-      $productos=Producto::join('tipo_productos','productos.tipo_producto_id','=','tipo_productos.id')
+      $productos=Producto::join('tipo_productos','tipo_productos.id','=','productos.tipo_producto_id')
                           ->select('productos.*','tipo_productos.nombre_tipo_producto')
+                          ->orderBy('nombre_producto','asc')
                           ->get();
       // orderBy('nombre_producto','asc')->get();
       return view("productos.index",compact("productos"));

@@ -16,7 +16,12 @@ class VentasController extends Controller
      */
     public function index()
     {
-      $ventas=Venta::orderBy('id','desc')->get();
+      $ventas=Venta::join('productos','productos.id','=','ventas.producto_id')
+                     ->join('clientes','clientes.id','=','ventas.cliente_id')
+                     ->join('proveedors','proveedors.id','=','ventas.proveedor_id')
+                     ->select('ventas.*','productos.nombre_producto','clientes.nombre_cliente','proveedors.nombre_proveedor')
+                     ->orderBy('id','desc')
+                     ->get();
       return view("ventas.index",compact("ventas"));
     }
 
@@ -59,9 +64,20 @@ class VentasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($busqueda)
     {
-        //
+        $ventas=Venta::join('productos','productos.id','=','ventas.producto_id')
+                       ->join('clientes','clientes.id','=','ventas.cliente_id')
+                       ->join('proveedors','proveedors.id','=','ventas.proveedor_id')
+                       ->select('ventas.*','productos.nombre_producto','clientes.nombre_cliente','proveedors.nombre_proveedor')
+                       ->where('nombre_producto','like','%'.$busqueda.'%')
+                       ->orWhere('nombre_proveedor','like','%'.$busqueda.'%')
+                       ->orWhere('nombre_cliente','like','%'.$busqueda.'%')
+                       ->orderBy('id','desc')
+                       ->get();
+
+        return view("ventas.index",compact("ventas"));
+
     }
 
     /**

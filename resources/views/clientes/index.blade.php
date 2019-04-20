@@ -8,7 +8,7 @@
       <h4 class="text-center">Buscar</h4>
 
       <div class="form-group mt-4">
-        <input type="text" class="form-control" name="busqueda" id="busqueda" placeholder="Ingresa tu busqueda">
+        <input type="text" class="form-control" name="busqueda" id="busqueda" placeholder="Ingresa tu busqueda" autofocus>
         <button type="submit" name="buscar" class="btn color-p mt-2 float-right" id="buscar">Buscar</button>
       </div>
     </nav>
