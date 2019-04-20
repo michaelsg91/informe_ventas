@@ -15,7 +15,7 @@ class ClientesController extends Controller
      */
     public function index()
     {
-      $clientes=Cliente::all();
+      $clientes=Cliente::orderBy('nombre_cliente','asc')->get();
       return view("clientes.index",compact("clientes"));
     }
 
@@ -51,9 +51,10 @@ class ClientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($busqueda)
     {
-        //
+      $clientes=Cliente::where('nombre_cliente','like','%'.$busqueda.'%')->orderBy('nombre_cliente','asc')->get();
+      return view("clientes.index",compact("clientes"));
     }
 
     /**

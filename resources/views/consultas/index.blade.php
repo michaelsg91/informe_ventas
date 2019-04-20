@@ -152,8 +152,6 @@ $cantidad_total=0;
             <td class="font-weight-bold">Total</td>
             <td class="text-right font-weight-bold">{{$cantidad_total}}</td>
             <td class="text-right font-weight-bold">{{$valor_total}}</td>
-            <td></td>
-            <td></td>
           </tr>
         </tbody>
       </table>

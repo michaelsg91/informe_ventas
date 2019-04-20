@@ -1,6 +1,7 @@
 @extends("layouts.plantilla")
+@include("layouts.carousel")
 
-@section("header")
+@section("head")
 @endsection
 
 @section("contenido")

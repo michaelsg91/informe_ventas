@@ -4,6 +4,9 @@
 
 <div class="container my-5">
 
+<input type="text" name="busqueda" id="busqueda" placeholder="Ingresa tu busqueda">
+<button type="submit" name="buscar" class="btn color-p" id="buscar">Buscar</button>
+
 <h4 class="text-center">Listado de Clientes</h4>
 
 <table class="table table-striped mt-4">
@@ -79,6 +82,23 @@
 
 @endsection
 
-@section("foot")
+@section("javascript")
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#buscar").click(function(){
+      var busqueda=$("#busqueda").val();
+      if(busqueda!=""){
+        window.location="/clientes/" + busqueda;
 
+      }
+
+    });
+
+    $('#busqueda').keypress(function(e){
+      if(e.keyCode==13)$('#buscar').click();
+    });
+
+
+  });
+</script>
 @endsection

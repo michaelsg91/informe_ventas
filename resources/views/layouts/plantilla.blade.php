@@ -11,10 +11,8 @@
   </head>
   <body class="bg-light">
 
-    <div class="head">
       @include("layouts.navbar")
       @yield("head")
-    </div>
 
     <div class="contenido">
 
