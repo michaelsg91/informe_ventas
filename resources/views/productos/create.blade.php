@@ -40,6 +40,7 @@ $tipo_productos=TipoProducto::all();
     @endif
     <!-- End if success -->
 
+    <!-- Div Nombre Producto -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="nombre_producto">Nombre Producto</label>
@@ -50,6 +51,7 @@ $tipo_productos=TipoProducto::all();
       </div>
     </div>
 
+    <!-- Div Tipo Producto -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="tipo_producto">Tipo Producto</label>
@@ -63,46 +65,51 @@ $tipo_productos=TipoProducto::all();
       </div>
     </div>
 
+    <!-- Div Precio Agrocosur -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="agrocosur">Precio Agrocosur</label>
-        <input type="number" step="50" min="50" class="form-control" id="agrocosur" name="agrocosur" placeholder="Precio Agrocosur" required>
+        <input type="number" min="0" class="form-control" id="agrocosur" name="agrocosur" placeholder="Precio Agrocosur" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>
       </div>
     </div>
 
+    <!-- Div Precio Centralpecuaria -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="centralpecuaria">Precio Centralpecuaria</label>
-        <input type="number" step="50" min="50" class="form-control" id="centralpecuaria" name="centralpecuaria" placeholder="Precio Centralpecuaria" required>
+        <input type="number" min="0" class="form-control" id="centralpecuaria" name="centralpecuaria" placeholder="Precio Centralpecuaria" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>
       </div>
     </div>
 
+    <!-- Div Precio Disprovet -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="disprovet">Precio Disprovet</label>
-        <input type="number" step="50" min="50" class="form-control" id="disprovet" name="disprovet" placeholder="Precio Disprovet" required>
+        <input type="number" min="0" class="form-control" id="disprovet" name="disprovet" placeholder="Precio Disprovet" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>
       </div>
     </div>
 
+    <!-- Div Precio ERMA -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="erma">Precio ERMA</label>
-        <input type="number" step="50" min="50" class="form-control" id="erma" name="erma" placeholder="Precio ERMA" required>
+        <input type="number" min="0" class="form-control" id="erma" name="erma" placeholder="Precio ERMA" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>
       </div>
     </div>
 
+    <!-- Div Button Submit -->
     <div class="row d-flex justify-content-center">
       <div class="col-md-6">
         <button type="submit" class="float-right btn color-p mt-2">Enviar</button>

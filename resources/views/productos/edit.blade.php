@@ -73,7 +73,7 @@ $tipo_productos=TipoProducto::all();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="precio_agrocosur">Precio Agrocosur</label>
-        <input type="number" step="50" class="form-control" id="precio_agrocosur" name="precio_agrocosur" value="{{$producto->agrocosur}}" placeholder="Precio Agrocosur" required>
+        <input type="number" min="0" maxlength="10" class="form-control" id="precio_agrocosur" name="agrocosur" value="{{$producto->agrocosur}}" placeholder="Precio Agrocosur" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>
@@ -84,7 +84,7 @@ $tipo_productos=TipoProducto::all();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="precio_centralpecuaria">Precio Centralpecuaria</label>
-        <input type="number" step="50" class="form-control" id="precio_centralpecuaria" name="precio_centralpecuaria" value="{{$producto->centralpecuaria}}" placeholder="Precio Centralpecuaria" required>
+        <input type="number" min="0" class="form-control" id="precio_centralpecuaria" name="centralpecuaria" value="{{$producto->centralpecuaria}}" placeholder="Precio Centralpecuaria" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>
@@ -95,7 +95,7 @@ $tipo_productos=TipoProducto::all();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="precio_disprovet">Precio Disprovet</label>
-        <input type="number" step="50" class="form-control" id="precio_disprovet" name="precio_disprovet" value="{{$producto->disprovet}}" placeholder="Precio Disprovet" required>
+        <input type="number" min="0" class="form-control" id="precio_disprovet" name="disprovet" value="{{$producto->disprovet}}" placeholder="Precio Disprovet" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>
@@ -106,7 +106,7 @@ $tipo_productos=TipoProducto::all();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="precio_erma">Precio ERMA</label>
-        <input type="number" step="50" class="form-control" id="precio_erma" name="precio_erma" value="{{$producto->erma}}" placeholder="Precio ERMA" required>
+        <input type="number" min="0" class="form-control" id="precio_erma" name="erma" value="{{$producto->erma}}" placeholder="Precio ERMA" required>
         <div class="invalid-tooltip">
           Ingrese un precio por favor.
         </div>

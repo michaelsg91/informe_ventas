@@ -90,7 +90,7 @@ $cantidad_total=0;
             </div>
           </div>
 
-        <input type="submit" name="enviar" class="btn color-p" value="Consultar">
+        <input type="submit" name="enviar" class="btn color-p float-right" value="Consultar">
       </form>
       <!-- End form consulta avanzada -->
     </nav>
