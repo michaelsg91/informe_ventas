@@ -107,7 +107,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="valor_unitario">Valor Unitario</label>
-        <input type="number" step="50" class="form-control" id="valor_unitario" placeholder="Valor Unitario" required>
+        <input type="number" min="0" class="form-control" id="valor_unitario" placeholder="Valor Unitario" required>
         <div class="invalid-tooltip">
           Ingresa el valor unitario por favor.
         </div>
@@ -118,7 +118,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="valor_venta">Valor Total</label>
-        <input type="number" step="50" class="form-control" id="valor_venta" name="valor_venta" placeholder="Valor Total" readonly>
+        <input type="number" min="0" class="form-control" id="valor_venta" name="valor_venta" placeholder="Valor Total" readonly>
       </div>
     </div>
 

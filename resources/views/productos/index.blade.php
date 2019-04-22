@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-md-2 m-4">
+    <nav class="col-lg-2 col-md-6 m-4">
       <h4 class="text-center">Buscar</h4>
 
       <div class="form-group mt-4">
@@ -14,12 +14,13 @@
     </nav>
 
     <!-- Start main -->
-    <main class="col-md-9 my-4">
+    <main class="col-lg-9 my-4">
 
 
       <h4 class="text-center">Listado de Productos</h4>
 
       <!-- Start table -->
+      <div class="table-responsive">
       <table class="table table-striped mt-4">
         <thead class="thead-dark">
           <tr>
@@ -86,7 +87,8 @@
           @endforeach
         </tbody>
       </table>
-      {!! $productos->links() !!} <!-- paginacion -->      
+    </div>
+      {!! $productos->links() !!} <!-- paginacion -->
     </main>
     <!-- End main table -->
 

@@ -12,7 +12,7 @@ $cantidad_total=0;
 <div class="container-fluid">
   <div class="row">
     <!-- Start nav busqueda -->
-    <nav class="col-md-2 m-4">
+    <nav class="col-lg-2 col-md-6 m-4">
       <h4 class="text-center">Buscar</h4>
 
       <div class="form-group mt-4">
@@ -22,11 +22,12 @@ $cantidad_total=0;
     </nav>
     <!-- End nab busqueda -->
 
-    <main class="col-md-9 my-4">
+    <main class="col-lg-9 my-4">
 
       <h4 class="text-center">Listado de Ventas</h4>
 
       <!-- Start table -->
+      <div class="table-responsive">
       <table class="table table-striped mt-4">
         <thead class="thead-dark">
           <tr>
@@ -112,6 +113,7 @@ $cantidad_total=0;
           </tr>
         </tbody>
       </table>
+    </div>
       {!! $ventas->links() !!} <!-- paginacion -->
 
     </main>
