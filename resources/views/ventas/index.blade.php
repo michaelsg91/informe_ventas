@@ -114,7 +114,11 @@ $cantidad_total=0;
         </tbody>
       </table>
     </div>
-      {!! $ventas->links() !!} <!-- paginacion -->
+    <!-- Start Pagination -->
+    <div class="pagination justify-content-center my-4">
+      {!! $ventas->links() !!}
+    </div>
+    <!-- End Pagination -->
 
     </main>
     <!-- End main table -->
@@ -140,6 +144,7 @@ $cantidad_total=0;
     $('#busqueda').keypress(function(e) {
       if (e.keyCode == 13) $('#buscar').click();
     });
+    $(".pagination").rPage();
 
   });
 </script>

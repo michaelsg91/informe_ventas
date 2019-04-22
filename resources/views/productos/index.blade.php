@@ -4,18 +4,19 @@
 
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-lg-2 col-md-6 m-4">
+    <!-- Start Panel Busqueda -->
+    <div class="col-12 col-md-6 col-lg-3 my-4">
       <h4 class="text-center">Buscar</h4>
 
       <div class="form-group mt-4">
         <input type="text" class="form-control" name="busqueda" id="busqueda" placeholder="Ingresa tu busqueda" autofocus>
         <button type="submit" name="buscar" class="btn color-p mt-2 float-right" id="buscar">Buscar</button>
       </div>
-    </nav>
+    </div>
+    <!-- End Panel Busqueda -->
 
     <!-- Start main -->
-    <main class="col-lg-9 my-4">
-
+    <div class="col-12 col-lg-9 my-4">
 
       <h4 class="text-center">Listado de Productos</h4>
 
@@ -88,8 +89,14 @@
         </tbody>
       </table>
     </div>
-      {!! $productos->links() !!} <!-- paginacion -->
-    </main>
+
+    <!-- Start Pagination -->
+    <div class="pagination justify-content-center my-4">
+      {!! $productos->links() !!}
+    </div>
+    <!-- End Pagination -->
+
+    </div>
     <!-- End main table -->
 
   </div><!-- End row -->
@@ -114,6 +121,8 @@
     $('#busqueda').keypress(function(e) {
       if (e.keyCode == 13) $('#buscar').click();
     });
+
+    $(".pagination").rPage();
 
   });
 </script>

@@ -85,7 +85,11 @@
         </tbody>
       </table>
     </div>
-      {!! $clientes->links() !!} <!-- paginacion -->
+    <!-- Start Pagination -->
+    <div class="pagination justify-content-center my-4">
+      {!! $clientes->links() !!}
+    </div>
+    <!-- End Pagination -->
     </main>
     <!-- End main table -->
 
@@ -113,6 +117,7 @@
     $('#busqueda').keypress(function(e) {
       if (e.keyCode == 13) $('#buscar').click();
     });
+    $(".pagination").rPage();
 
 
   });
