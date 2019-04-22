@@ -96,7 +96,7 @@ $proveedors=Proveedor::orderBy('nombre_proveedor','asc')->get();
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 form-group">
         <label for="cantidad">Cantidad</label>
-        <input type="number" step="1" min="1" max="999" class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad" required>
+        <input type="number" step="1" min="1" max="10000" class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad" required>
         <div class="invalid-tooltip">
           La cantidad es erronea.
         </div>

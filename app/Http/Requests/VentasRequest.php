@@ -26,7 +26,7 @@ class VentasRequest extends FormRequest
         return [
             'cliente_id'=>'required',
             'proveedor_id'=>'required',
-            'cantidad'=>'required|numeric|min:1|max:999',
+            'cantidad'=>'required|numeric|min:1|max:10000',
             'valor_venta'=>'required',
             'fecha_venta'=>'date_format:Y-m-d|before_or_equal:today',
 
@@ -40,7 +40,8 @@ class VentasRequest extends FormRequest
         'proveedor_id.required'=>'El Proveedor es obligatorio.',
         'cantidad.required'=>'La Cantidad es obligatorio.',
         'cantidad.numeric'=>'La Cantidad debe ser numérica.',
-        'cantidad.between'=>'La Cantidad no debe ser mennor a 1 o mayor a 999.',
+        'cantidad.min'=>'La Cantidad no debe ser menor a 1.',
+        'cantidad.max'=>'La Cantidad no debe ser mayor a 10000.',
         'valor_venta.required'=>'El Valor Total es obligatorio.',
         'fecha_venta.date_format'=>'Formato de la fecha: Año-mes-día.',
         'fecha_venta.before_or_equal'=>'La fecha no puede ser mayor al día de hoy.',
